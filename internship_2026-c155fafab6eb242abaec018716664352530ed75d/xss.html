@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>            
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple XSS Demo</title>
+</head>
+<body>
+    <h1>Simple XSS Demo</h1>
+    <input type="text" name="name" id="name" placeholder="Enter your name">
+    <button id="submit">Submit</button> 
+    <div id="output"></div>
+
+    <script>
+        function handleSubmit() {
+            const name = document.getElementById('name').value;
+            document.getElementById('output').innerHTML = `Hello, ${name}!`;
+        }   
+
+        document.getElementById('submit').addEventListener('click', handleSubmit);
+    </script>
+</body>
+</html>
